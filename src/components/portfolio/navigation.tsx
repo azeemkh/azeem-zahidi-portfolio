@@ -36,37 +36,52 @@ export function Navigation() {
   }
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/90 backdrop-blur-md border-b border-border shadow-[var(--shadow-soft)]" 
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <button
-            onClick={scrollToTop}
-            className="text-xl font-bold text-professional-accent hover:text-professional-accent/80 transition-colors"
-          >
-            Azeem Zahidi
-          </button>
-          
-          <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
+    <>
+      {/* Skip to main content link for screen readers */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-professional-accent focus:text-white focus:rounded"
+      >
+        Skip to main content
+      </a>
+      
+      <nav 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? "bg-background/90 backdrop-blur-md border-b border-border shadow-[var(--shadow-soft)]" 
+            : "bg-transparent"
+        }`}
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <div className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={scrollToTop}
+              className="text-xl font-bold text-professional-accent hover:text-professional-accent/80 transition-colors focus:outline-none focus:ring-2 focus:ring-professional-accent focus:ring-offset-2 rounded"
+              aria-label="Go to top of page"
+            >
+              Azeem Zahidi
+            </button>
+            
+            <div className="hidden md:flex items-center gap-6" role="menubar">
+              {navItems.map((item) => (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-professional-accent focus:ring-offset-2 rounded px-2 py-1"
+                  role="menuitem"
+                  aria-label={`Navigate to ${item.label} section`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+            
+            <ThemeToggle />
           </div>
-          
-          <ThemeToggle />
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   )
 }
