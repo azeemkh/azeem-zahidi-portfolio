@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Mail, Linkedin, MapPin } from "lucide-react"
+import { Mail, Linkedin, MapPin, Phone } from "lucide-react"
 
 export function ContactSection() {
   return (
@@ -14,7 +14,17 @@ export function ContactSection() {
             or just having a conversation about technology and innovation.
           </p>
           
-          <div className="grid gap-6 md:grid-cols-3 mb-8">
+          <div className="grid gap-6 md:grid-cols-4 mb-8">
+            <div className="flex flex-col items-center gap-2">
+              <Phone className="h-8 w-8 text-professional-accent" />
+              <a 
+                href="tel:+918767694654"
+                className="text-sm font-medium hover:text-professional-accent transition-colors"
+              >
+                +91 8767694654
+              </a>
+            </div>
+            
             <div className="flex flex-col items-center gap-2">
               <Mail className="h-8 w-8 text-professional-accent" />
               <a 
@@ -45,16 +55,28 @@ export function ContactSection() {
             </div>
           </div>
           
-          <Button 
-            asChild 
-            size="lg"
-            className="bg-professional-accent hover:bg-professional-accent/90 text-white"
-          >
-            <a href="mailto:azeemkh1786@gmail.com">
-              <Mail className="h-5 w-5 mr-2" />
-              Send Message
-            </a>
-          </Button>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button 
+              asChild 
+              size="lg"
+              className="bg-professional-accent hover:bg-professional-accent/90 text-white"
+            >
+              <a href="tel:+918767694654">
+                <Phone className="h-5 w-5 mr-2" />
+                Call Me
+              </a>
+            </Button>
+            <Button 
+              asChild 
+              size="lg"
+              className="bg-professional-accent hover:bg-professional-accent/90 text-white"
+            >
+              <a href="mailto:azeemkh1786@gmail.com">
+                <Mail className="h-5 w-5 mr-2" />
+                Email Me
+              </a>
+            </Button>
+          </div>
         </Card>
       </div>
     </section>
