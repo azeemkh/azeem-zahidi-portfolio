@@ -61,7 +61,7 @@ export function Navigation() {
               className="text-xl font-bold text-professional-accent hover:text-professional-accent/80 transition-colors focus:outline-none focus:ring-2 focus:ring-professional-accent focus:ring-offset-2 rounded"
               aria-label="Go to top of page"
             >
-              Azeem Zahidi
+              Khan Azeem Zahidi
             </button>
             
             <div className="hidden md:flex items-center gap-6" role="menubar">
