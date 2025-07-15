@@ -54,7 +54,7 @@ export function HeroSection() {
               asChild 
               variant="outline" 
               size="lg"
-              className="border-border hover:bg-white hover:text-white/90 focus:ring-2 focus:ring-professional-accent focus:ring-offset-2"
+              className="border-border hover:bg-white hover:text-black focus:ring-2 focus:ring-professional-accent focus:ring-offset-2"
             >
               <a 
                 href="https://www.linkedin.com/in/khanazeemzahidi" 
